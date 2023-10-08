@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SettleEase</string>
+    <string name="services_description">
+        Our app provides a range of services to help you settle in and explore new cities and countries. You can find local friends who can assist you with various aspects of settling, such as finding housing, understanding local culture, and navigating the city. Additionally, we offer tourist guidance services, including recommendations for places to visit, local cuisine, and hidden gems. Let us make your journey a memorable experience!
+    </string>
+    <string name="background_image">Background Image</string>
+    <string name="welcome_to">Welcome to</string>
+    <string name="settleease">SettleEase</string>
+    <string name="join">Join</string>
+    <string name="services">Services</string>
+    <string name="your_journey_to_easy_settlement_starts_here">Your journey to easy settlement starts here!</string>
+</resources>
+
+

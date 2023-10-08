@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "649915949223",
+    "firebase_url": "https://settleease-7b890-default-rtdb.firebaseio.com",
+    "project_id": "settleease-7b890",
+    "storage_bucket": "settleease-7b890.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:649915949223:android:9c778a9f3958b01af47b82",
+        "android_client_info": {
+          "package_name": "aziz6292.studio.settleease"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8rxtcZy2B0qnO6RAtUAArMbRN-PtoHqg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
