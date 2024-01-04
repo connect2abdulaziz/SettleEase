@@ -1,2 +1,1 @@
-"# SettleEase-APK" 
-"# SettleEase-APK" 
+"# SettleEase-App" 

@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/profile_bkg"
+    tools:context=".Profile">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/picture"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/profile"
+                    app:civ_border_color="@color/white"
+                    app:civ_border_width="2dp" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/camera"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="100dp"
+                    android:src="@drawable/camera"
+                    app:civ_border_color="@color/white"
+                    app:civ_border_width="2dp" />
+            </RelativeLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/edittext_bkg"
+                        android:drawableLeft="@drawable/baseline_person_outline_24"
+                        android:drawablePadding="15dp"
+                        android:hint="UserName"
+                        android:padding="15dp"
+                        android:inputType="textPersonName "
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/purple" />
+
+                    <EditText
+                        android:id="@+id/phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/edittext_bkg"
+                        android:drawableLeft="@drawable/baseline_call_24"
+                        android:drawablePadding="15dp"
+                        android:hint="PhoneNumber"
+                        android:paddingLeft="15dp"
+                        android:inputType="phone"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/purple" />
+
+                    <EditText
+                        android:id="@+id/email"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/edittext_bkg"
+                        android:drawableLeft="@drawable/baseline_mail_outline_24"
+                        android:drawablePadding="15dp"
+                        android:hint="Email"
+                        android:paddingLeft="15dp"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/purple" />
+
+                    <EditText
+                        android:id="@+id/address"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/edittext_bkg"
+                        android:drawableLeft="@drawable/baseline_location_on_24"
+                        android:drawablePadding="15dp"
+                        android:hint="Address"
+                        android:paddingLeft="15dp"
+                        android:inputType="text"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/purple" />
+
+                    <EditText
+                        android:id="@+id/cnic"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/edittext_bkg"
+                        android:drawableLeft="@drawable/baseline_credit_card_24"
+                        android:drawablePadding="15dp"
+                        android:hint="CNIC"
+                        android:paddingLeft="15dp"
+                        android:inputType="number"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/purple" />
+
+                    <EditText
+                        android:id="@+id/city"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/edittext_bkg"
+                        android:drawableLeft="@drawable/baseline_location_city_24"
+                        android:drawablePadding="15dp"
+                        android:hint="City"
+                        android:paddingLeft="15dp"
+                        android:inputType="text"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/purple" />
+
+                    <EditText
+                        android:id="@+id/country"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/edittext_bkg"
+                        android:drawableLeft="@drawable/baseline_location_city_24"
+                        android:drawablePadding="15dp"
+                        android:hint="Country"
+                        android:paddingLeft="15dp"
+                        android:inputType="text"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/purple" />
+
+                    <EditText
+                        android:id="@+id/postal"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_alignBottom="@+id/country"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/edittext_bkg"
+                        android:drawableLeft="@drawable/baseline_contact_mail_24"
+                        android:drawablePadding="15dp"
+                        android:hint="PostalAddress"
+                        android:paddingLeft="15dp"
+                        android:inputType="textPostalAddress"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/purple" />
+
+                    <EditText
+                        android:id="@+id/lang"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_alignBottom="@+id/postal"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/edittext_bkg"
+                        android:drawableLeft="@drawable/baseline_sign_language_24"
+                        android:drawablePadding="15dp"
+                        android:hint="Language"
+                        android:paddingLeft="15dp"
+                        android:inputType="text"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/purple" />
+
+                    <EditText
+                        android:id="@+id/dob"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_alignBottom="@+id/lang"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/edittext_bkg"
+                        android:drawableLeft="@drawable/baseline_date_range_24"
+                        android:drawablePadding="15dp"
+                        android:hint="DOB"
+                        android:paddingLeft="15dp"
+                        android:inputType="date"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/purple" />
+
+                    <EditText
+                        android:id="@+id/occupation"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_alignBottom="@+id/dob"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/edittext_bkg"
+                        android:drawableLeft="@drawable/baseline_sensor_occupied_24"
+                        android:drawablePadding="15dp"
+                        android:hint="Occupation"
+                        android:paddingLeft="15dp"
+                        android:inputType="textMultiLine"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/purple" />
+
+                    <Button
+                        android:id="@+id/join"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:text="JOIN"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

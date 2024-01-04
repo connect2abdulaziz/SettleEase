@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+            android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:title="Home"
+            android:icon="@drawable/baseline_home_24"/>
+        <item
+            android:id="@+id/bottom_chat"
+            android:title="Chat"
+            android:icon="@drawable/baseline_chat_24"/>
+
+        <item
+            android:id="@+id/profile"
+            android:title="Profile"
+            android:icon="@drawable/baseline_person_24"/>
+        <item
+            android:id="@+id/services"
+            android:title="Services"
+            android:icon="@drawable/baseline_supervised_user_circle_24"/>
+        <item
+            android:id="@+id/setting"
+            android:title="Setting"
+            android:icon="@drawable/baseline_settings_24"/>
+        <item
+            android:id="@+id/logout"
+            android:title="Logout"
+            android:icon="@drawable/baseline_logout_24"/>
+    </group>
+
+</menu>
