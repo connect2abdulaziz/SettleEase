@@ -1,14 +1,525 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context=".ServicesFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Services" />
+        android:layout_marginBottom="80dp"
+        android:layout_height="match_parent">
 
+        <LinearLayout
+            android:background="#ebdbfd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Header Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:textSize="30sp"
+                android:layout_marginTop="15dp"
+                android:text="SettleEase"
+                android:textStyle="bold"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Welcome to SettleEase, your comprehensive application for global settlement and guidance!"
+                android:textStyle="italic"
+                android:textColor="@android:color/darker_gray"
+                android:inputType="textMultiLine"
+                android:gravity="center"/>
+
+            <!-- Service Cards Section -->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:rowCount="9"
+                android:columnCount="1"
+                android:layout_gravity="center">
+
+                <!-- Card 1: Global Settlement -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="10dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="10dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        >
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="15dp"
+                            android:src="@drawable/globalsettelment"
+                            app:civ_border_color="@color/black"
+                            app:civ_border_width="2dp" >
+                        </de.hdodenhof.circleimageview.CircleImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Global Settlement"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Find guidance and resources for settling down in various locations worldwide."
+                            android:inputType="textMultiLine"
+                            android:textColor="@color/grey">
+                        </TextView>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- Card 2: Per to Per Settlement -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="10dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="10dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        >
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="15dp"
+                            android:src="@drawable/pertoper"
+                            app:civ_border_color="@color/black"
+                            app:civ_border_width="2dp" >
+                        </de.hdodenhof.circleimageview.CircleImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Per to Per Settlement"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Connect with experienced individuals who have successfully settled in your desired destination."
+                            android:inputType="textMultiLine"
+                            android:textColor="@color/grey">
+                        </TextView>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Card 3: Tourist Assistance -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="10dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="10dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        >
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="15dp"
+                            android:src="@drawable/tourest"
+                            app:civ_border_color="@color/black"
+                            app:civ_border_width="2dp" >
+                        </de.hdodenhof.circleimageview.CircleImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tourist Assistance"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Tourists can hire local guides through the app for a personalized and enriching travel experience."
+                            android:inputType="textMultiLine"
+                            android:textColor="@color/grey">
+                        </TextView>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Card 4: Community Forums -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="10dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="10dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        >
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="15dp"
+                            android:src="@drawable/community"
+                            app:civ_border_color="@color/black"
+                            app:civ_border_width="2dp" >
+                        </de.hdodenhof.circleimageview.CircleImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Community Forums"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Join and participate in community forums to ask questions, share experiences, and connect with like-minded individuals."
+                            android:inputType="textMultiLine"
+                            android:textColor="@color/grey">
+                        </TextView>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <!-- Card 5: Personalized Recommendations -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="10dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="10dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        >
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="15dp"
+                            android:src="@drawable/personalrecomm"
+                            app:civ_border_color="@color/black"
+                            app:civ_border_width="2dp" >
+                        </de.hdodenhof.circleimageview.CircleImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Personalized Recommendations"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Receive personalized recommendations based on your preferences and settlement goals."
+                            android:inputType="textMultiLine"
+                            android:textColor="@color/grey">
+                        </TextView>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Card 6: Getting Started -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="10dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="10dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Getting Started"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="1_ Download the App:  Visit your app store and search for SettleEase to download the application."
+                            android:inputType="textMultiLine"
+                            android:textColor="@color/grey">
+                        </TextView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="2_Create Your Profile: Sign up for a SettleEase account and create your profile to access personalized features."
+                            android:inputType="textMultiLine"
+                            android:textColor="@color/grey">
+                        </TextView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="3_Explore Settlement Guides: Browse settled individuals, explore community forums, and connect with experienced guides."
+                            android:inputType="textMultiLine"
+                            android:textColor="@color/grey">
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:inputType="textMultiLine"
+                            android:minHeight="48dp"
+                            android:padding="5dp"
+                            android:text="4_Tourist Services: If you're a tourist, explore the tourist assistance feature to hire local guides."
+                            android:textColor="@color/grey"></TextView>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Card 7: Stay Connected -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="10dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="10dp"
+                    >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="15dp"
+                        android:src="@drawable/feedback"
+                        app:civ_border_color="@color/black"
+                        app:civ_border_width="2dp" >
+                    </de.hdodenhof.circleimageview.CircleImageView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Feedback and Support"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:inputType="textMultiLine"
+                        android:minHeight="48dp"
+                        android:padding="5dp"
+                        android:text="We value your feedback! If you encounter any issues or have suggestions for improvement, please reach out to us at: "
+                        android:textColor="@color/grey"></TextView>
+
+                    <TextView
+                        android:id="@+id/appLink"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:inputType="textMultiLine"
+                        android:minHeight="48dp"
+                        android:padding="5dp"
+                        android:text="support@settleease.com"
+                        android:textColor="@color/dark_blue"></TextView>
+
+                    <TextView
+                        android:id="@+id/emailto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:inputType="textMultiLine"
+                        android:minHeight="48dp"
+                        android:padding="5dp"
+                        android:text="mailto:connect2abdulaziz@gmail.com"
+                        android:textColor="@color/dark_blue"></TextView>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+                <!--                8 card-->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="10dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="10dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:inputType="textMultiLine"
+                            android:minHeight="48dp"
+                            android:padding="5dp"
+                            android:text="Stay Connected"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"></TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:inputType="textMultiLine"
+                            android:minHeight="48dp"
+                            android:padding="5dp"
+                            android:text="Follow us on social media for updates and community discussions:"
+                            android:textColor="@color/grey"></TextView>
+
+                        <TextView
+                            android:id="@+id/Linked"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:inputType="textMultiLine"
+                            android:minHeight="48dp"
+                            android:padding="5dp"
+                            android:text="https://www.linkedin.com/in/connect2abdulaziz"
+                            android:textColor="@color/dark_blue"></TextView>
+
+                        <TextView
+                            android:id="@+id/facebook"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:inputType="textMultiLine"
+                            android:minHeight="48dp"
+                            android:padding="5dp"
+                            android:text="https://web.facebook.com/connect2abdulaziz"
+                            android:textColor="@color/dark_blue"></TextView>
+
+                        <TextView
+                            android:id="@+id/insta"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:inputType="textMultiLine"
+                            android:minHeight="48dp"
+                            android:padding="5dp"
+                            android:text="https://www.instagram.com/connect2abdulaziz/"
+                            android:textColor="@color/dark_blue"></TextView>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <!-- Card 9: Contributing -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="10dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="10dp"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Contributing"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:inputType="textMultiLine"
+                            android:minHeight="48dp"
+                            android:padding="5dp"
+                            android:text="
+We welcome contributions! If you'd like to contribute to SettleEase, please check our [contribution guidelines]"
+                            android:textColor="@color/grey"></TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:inputType="textMultiLine"
+                            android:minHeight="48dp"
+                            android:padding="5dp"
+                            android:text="https://connect2abdulaziz.github.io/abdulaziz."
+                            android:textColor="@color/dark_blue"></TextView>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </GridLayout>
+
+            <!-- Closing Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:inputType="textMultiLine"
+                android:padding="5dp"
+                android:text="Happy Settling with SettleEase! 🌎✨"
+                android:textColor="@color/black"></TextView>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
 </FrameLayout>

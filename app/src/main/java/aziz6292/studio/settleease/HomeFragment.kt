@@ -1,4 +1,4 @@
-package com.example.se
+package aziz6292.studio.settleease
 
 import android.os.Bundle
 import android.view.LayoutInflater

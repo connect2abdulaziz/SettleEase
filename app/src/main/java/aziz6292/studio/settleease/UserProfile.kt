@@ -1,4 +1,6 @@
-package com.example.se
+package aziz6292.studio.settleease
+
+import com.google.android.material.textfield.TextInputEditText
 
 data class UserProfile(
     val picture:String?="",
@@ -11,6 +13,6 @@ data class UserProfile(
     val country:String?="",
     val postalAddress:String?="",
     val lang:String?="",
-    val dob:String?="",
+    val dob: String? ="",
     val occupation:String?=""
 );

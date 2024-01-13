@@ -1,14 +1,22 @@
 <resources>
     <string name="app_name">SettleEase</string>
-    <string name="services_description">
-        Our app provides a range of services to help you settle in and explore new cities and countries. You can find local friends who can assist you with various aspects of settling, such as finding housing, understanding local culture, and navigating the city. Additionally, we offer tourist guidance services, including recommendations for places to visit, local cuisine, and hidden gems. Let us make your journey a memorable experience!
-    </string>
-    <string name="background_image">Background Image</string>
-    <string name="welcome_to">Welcome to</string>
-    <string name="settleease">SettleEase</string>
-    <string name="join">Join</string>
-    <string name="services">Services</string>
-    <string name="your_journey_to_easy_settlement_starts_here">Your journey to easy settlement starts here!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="services_description">We provide service for tourist</string>
+    <string name="todo">TODO</string>
+    <string name="email">Email</string>
+    <string name="login">LOGIN</string>
+    <string name="login1">Login</string>
+    <string name="password">Password</string>
+    <string name="don_t_have_an_account_sign_up_here">Don\'t have an account? Sign up here</string>
+    <string name="login2">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="confirm">Confirm</string>
+    <string name="already_have_an_account_login_now">Already have an account? Login now!</string>
+    <string name="sign_up1">Sign Up</string>
+    <string name="Open_Drawer">Open Navigation Drawer</string>
+    <string name="Close_Drawer">Close Navigation Drawer</string>
+    <string name="todo1">TODO</string>
+    <string name="name1">Name</string>
+    <string name="occupation1">Occupation</string>
 </resources>
-
-

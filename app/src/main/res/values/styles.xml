@@ -1,0 +1,8 @@
+<resources>
+
+    <style name="TextLabel" parent="TextAppearance.Design.Hint">
+        <item name="android:textColor">@color/purple</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+</resources>

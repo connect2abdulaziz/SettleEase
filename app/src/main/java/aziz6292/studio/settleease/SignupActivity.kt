@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -11,12 +13,15 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.auth.EmailAuthProvider
 
-
+@Suppress("DEPRECATION")
 class SignupActivity : AppCompatActivity() {
 
     private lateinit var signupEmailEditText: EditText
     private lateinit var signupPasswordEditText: EditText
+    private lateinit var confirmPasswordEditText: EditText
     private lateinit var signupButton: Button
+    private lateinit var backImageView: ImageView
+    private lateinit var loginText: TextView
 
     private lateinit var auth: FirebaseAuth
 
@@ -29,19 +34,36 @@ class SignupActivity : AppCompatActivity() {
 
         signupEmailEditText = findViewById(R.id.signupEmailEditText)
         signupPasswordEditText = findViewById(R.id.signupPasswordEditText)
+        confirmPasswordEditText = findViewById(R.id.confirmPasswordEditText)
         signupButton = findViewById(R.id.signupButton)
+        backImageView = findViewById(R.id.back)
+        loginText= findViewById(R.id.login_text)
+
+        loginText.setOnClickListener {
+            onBackPressed()
+        }
 
         signupButton.setOnClickListener {
             signUpUser()
+        }
+
+        backImageView.setOnClickListener {
+            onBackPressed()
         }
     }
 
     private fun signUpUser() {
         val email = signupEmailEditText.text.toString().trim()
         val password = signupPasswordEditText.text.toString().trim()
+        val confirmPassword = confirmPasswordEditText.text.toString().trim()
 
-        if (email.isEmpty() || password.isEmpty()) {
+        if (email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
             Toast.makeText(this, "Please fill in all fields.", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if (password != confirmPassword) {
+            Toast.makeText(this, "Passwords do not match.", Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -90,3 +112,4 @@ class SignupActivity : AppCompatActivity() {
             }
     }
 }
+

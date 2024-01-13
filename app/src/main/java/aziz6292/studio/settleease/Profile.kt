@@ -1,5 +1,9 @@
-package com.example.se
+@file:Suppress("DEPRECATION")
 
+package aziz6292.studio.settleease
+
+import android.annotation.SuppressLint
+import android.app.DatePickerDialog
 import android.app.Dialog
 import android.app.ProgressDialog
 import android.content.Intent
@@ -13,34 +17,38 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.example.se.databinding.ActivityProfileBinding
+import aziz6292.studio.settleease.databinding.ActivityProfileBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
-import de.hdodenhof.circleimageview.CircleImageView
-import java.util.UUID
-
+import com.google.firebase.storage.StorageReference
+import java.io.ByteArrayOutputStream
+import java.util.Calendar
 
 class Profile : AppCompatActivity() {
 
     private lateinit var binding: ActivityProfileBinding
     private lateinit var auth: FirebaseAuth
     private lateinit var dbReference: DatabaseReference
-    private lateinit var storageRef: FirebaseStorage
     private lateinit var imageUri: Uri
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //  Inflate binding
+
         binding = ActivityProfileBinding.inflate(layoutInflater)
-        //  Set content view to binding.root
         setContentView(binding.root)
 
-        // Firebase instance
+        imageUri = Uri.EMPTY // or use a default Uri
+
+        binding.camera.setOnClickListener {
+            showCustomDialogBox()
+        }
+
         auth = FirebaseAuth.getInstance()
-        // Current user
         val uid = auth.currentUser?.uid
         dbReference = FirebaseDatabase.getInstance().getReference("Users")
 
@@ -51,23 +59,23 @@ class Profile : AppCompatActivity() {
         binding.join.setBackgroundColor(ContextCompat.getColor(this, R.color.purple))
 
         binding.join.setOnClickListener {
-            val image=imageUri.toString()
-            val name=binding.name.text.toString()
-            val phone=binding.phone.text.toString()
-            val email=binding.email.text.toString()
-            val address=binding.address.text.toString()
-            val cnic=binding.cnic.text.toString()
-            val city=binding.city.text.toString()
-            val country=binding.country.text.toString()
-            val postAddress=binding.postal.text.toString()
-            val lang=binding.lang.text.toString()
-            val dob=binding.dob.text.toString()
-            val occupation=binding.occupation.text.toString()
+            imageUri.toString()
+            val name = binding.name.text.toString()
+            val phone = binding.phone.text.toString()
+            val email = binding.email.text.toString()
+            val address = binding.address.text.toString()
+            val cnic = binding.cnic.text.toString()
+            val city = binding.city.text.toString()
+            val country = binding.country.text.toString()
+            val postAddress = binding.postal.text.toString()
+            val lang = binding.lang.text.toString()
+            val dob = binding.dobEditText.text.toString()
+            val occupation = binding.occupation.text.toString()
 
-            if(name.isNotEmpty()&&phone.isNotEmpty()&&email.isNotEmpty()&&address.isNotEmpty()
-                &&cnic.isNotEmpty()&& city.isNotEmpty()&&country.isNotEmpty()&&postAddress.isNotEmpty()
-                &&lang.isNotEmpty() &&dob.isNotEmpty()&& occupation.isNotEmpty())
-            {
+            if (name.isNotEmpty() && phone.isNotEmpty() && email.isNotEmpty() && address.isNotEmpty()
+                && cnic.isNotEmpty() && city.isNotEmpty() && country.isNotEmpty() && postAddress.isNotEmpty()
+                && lang.isNotEmpty() && dob.toString().isNotEmpty() && occupation.isNotEmpty()
+            ) {
                 val user = UserProfile(
                     imageUri.toString(),
                     name,
@@ -82,9 +90,9 @@ class Profile : AppCompatActivity() {
                     dob,
                     occupation
                 )
+
                 if (uid != null) {
                     dbReference.child(uid).setValue(user).addOnCompleteListener {
-
                         if (it.isSuccessful) {
                             Toast.makeText(
                                 this@Profile,
@@ -92,6 +100,8 @@ class Profile : AppCompatActivity() {
                                 Toast.LENGTH_SHORT
                             ).show()
 
+                            // Upload image to Firebase Storage and save URL to database
+                            uploadToFirebase(uid)
                         } else {
                             Toast.makeText(
                                 this@Profile,
@@ -100,22 +110,14 @@ class Profile : AppCompatActivity() {
                             ).show()
                         }
                     }
+                } else {
+                    Toast.makeText(
+                        this@Profile,
+                        "User ID is null.",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
-
-
-                val image: CircleImageView = findViewById(R.id.picture)
-                val drawable = image.drawable
-                val imageBitmap = (drawable as? BitmapDrawable)?.bitmap // Convert drawable to bitmap
-
-                val iNext = Intent(this, Index::class.java)
-                iNext.putExtra("imageResource", imageBitmap)
-                iNext.putExtra("Name", name)
-                iNext.putExtra("Occupation", occupation)
-                startActivity(iNext)
-                finish()
-
-            }
-            else
+            } else
                 Toast.makeText(
                     this@Profile,
                     "Fill All Fields.",
@@ -124,6 +126,7 @@ class Profile : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("QueryPermissionsNeeded")
     private fun showCustomDialogBox() {
         val dialog = Dialog(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -154,16 +157,14 @@ class Profile : AppCompatActivity() {
         dialog.show()
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
         when (requestCode) {
             1 -> {
                 if (resultCode == RESULT_OK) {
-                    // The image data is in the extras // data store in bitmap form when capture from camera
                     val imageBitmap = data?.extras?.get("data") as Bitmap
-                    // You can use the imageBitmap as needed
-                    // For now, let's save it to a temporary file
                     val tempFile = createTempFile("profile_image", ".jpg", cacheDir)
                     tempFile.outputStream().use {
                         imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, it)
@@ -171,38 +172,60 @@ class Profile : AppCompatActivity() {
 
                     imageUri = Uri.fromFile(tempFile)
                     binding.picture.setImageURI(imageUri)
-                    uploadToFirebase(imageUri)
+                    // Note: Don't call uploadToFirebase here, it will be called after saving user profile
                 }
             }
             2 -> {
                 if (resultCode == RESULT_OK && data != null) {
                     imageUri = data.data!!
                     binding.picture.setImageURI(imageUri)
-                    uploadToFirebase(imageUri)
+                    // Note: Don't call uploadToFirebase here, it will be called after saving user profile
                 }
             }
         }
     }
 
+    private fun uploadToFirebase(uid: String) {
+        val storageRef =
+            FirebaseStorage.getInstance().reference.child("images/$uid.jpg")
 
-    private fun uploadToFirebase(uri: Uri) {
-        // progress dialoag
-        if (uri != null) {
-            val progDialog = ProgressDialog(this)
-            progDialog.setTitle("Uploading Image.....")
-            progDialog.setMessage("Progressing.....")
-            progDialog.show()
+        val progressDialog = ProgressDialog(this)
+        progressDialog.setTitle("Saving Data.....")
+        progressDialog.setMessage("Progressing.....")
+        progressDialog.show()
 
-            val storageRef =
-                FirebaseStorage.getInstance().getReference().child("images/" + UUID.randomUUID().toString())
+        // Convert the imageUri to a byte array
+        val bitmap = (binding.picture.drawable as BitmapDrawable).bitmap
+        val baos = ByteArrayOutputStream()
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+        val data = baos.toByteArray()
 
-            storageRef.putFile(uri).addOnSuccessListener {
-                progDialog.dismiss()
-                Toast.makeText(applicationContext, "File Upload successfully", Toast.LENGTH_SHORT).show()
-            }.addOnFailureListener {
-                progDialog.dismiss()
+        storageRef.putBytes(data)
+            .addOnSuccessListener {
+                progressDialog.dismiss()
+                Toast.makeText(
+                    applicationContext,
+                    "File Upload successfully",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+                // Save the image URL to the user's profile in the database
+                saveImageUrlToDatabase(storageRef, uid)
+
+                startActivity(Intent(this, Index::class.java))
+                finish()
+
+            }
+            .addOnFailureListener {
+                progressDialog.dismiss()
                 Toast.makeText(applicationContext, "File Upload Fail...", Toast.LENGTH_SHORT).show()
             }
+    }
+
+    private fun saveImageUrlToDatabase(imageRef: StorageReference, uid: String) {
+        imageRef.downloadUrl.addOnSuccessListener { uri ->
+            // Update the user's profile in the database with the image URL
+            dbReference.child(uid).child("profileImageUrl").setValue(uri.toString())
         }
     }
 }

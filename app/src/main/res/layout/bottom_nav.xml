@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         app:backgroundTint="@color/white"
         android:layout_gravity="bottom"
+
         android:textColor="@color/white">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView

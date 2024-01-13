@@ -2,13 +2,253 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".HomeFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".HomeFragment"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:background="@color/white"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ebdbfd"
+        android:orientation="vertical">
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="52dp"
+        android:textSize="30sp"
+        android:layout_marginTop="15dp"
+        android:text="SettleEase"
+        android:textStyle="bold"
+        android:gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Welcome to SettleEase, your comprehensive application for global settlement and guidance!"
+            android:textStyle="italic"
+            android:textColor="@android:color/darker_gray"
+            android:inputType="textMultiLine"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:textStyle="bold"
+            android:textSize="24dp"
+            android:layout_marginVertical="30dp"
+            android:text="Connect to Get Settled"
+            android:gravity="center"/>
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:rowCount="2"
+        android:columnCount="2"
+        android:paddingVertical="10dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_gravity="center">
 
+        <!-- First CardView -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="185dp"
+            android:layout_height="200dp"
+            app:cardElevation="10dp"
+            android:paddingTop="10dp"
+            android:id="@+id/searchbyname"
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="20dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/circlebackgroundpurple"
+                    android:src="@drawable/baseline_search_24">
+                </ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NAME"
+                    android:textSize="20dp"
+                    android:layout_marginTop="5dp"
+                    android:textStyle="bold"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"
+                    android:layout_marginHorizontal="10dp"
+                    >
+                </View>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:inputType="text"
+                    android:minHeight="48dp"
+                    android:textSize="17dp"
+                    android:hint="Search here"
+                    android:textColor="@color/grey" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Second CardView -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="185dp"
+            android:layout_height="200dp"
+            android:id="@+id/searchbyoccup"
+            app:cardElevation="10dp"
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/circlebackgroundgreen"
+                    android:src="@drawable/baseline_search_24">
+                </ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="OCCUPATION"
+                    android:textSize="20dp"
+                    android:layout_marginTop="5dp"
+                    android:textStyle="bold"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"
+                    android:layout_marginHorizontal="10dp">
+                </View>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:inputType="text"
+                    android:minHeight="48dp"
+                    android:textSize="17dp"
+                    android:hint="Search here"
+                    android:textColor="@color/grey" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Third CardView -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="185dp"
+            android:layout_height="200dp"
+            android:id="@+id/searchbyarea"
+            app:cardElevation="10dp"
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/circlebackgroundpink"
+                    android:src="@drawable/baseline_search_24">
+                </ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AREA"
+                    android:layout_marginTop="5dp"
+                    android:textSize="20dp"
+                    android:textStyle="bold"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"
+                    android:layout_marginHorizontal="10dp">
+                </View>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:inputType="text"
+                    android:minHeight="48dp"
+                    android:textSize="17dp"
+                    android:hint="Search here"
+                    android:textColor="@color/grey" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Fourth CardView -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="185dp"
+            android:layout_height="200dp"
+            android:id="@+id/searchbylang"
+            app:cardElevation="10dp"
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/circlebackgroundsalmon"
+                    android:src="@drawable/baseline_search_24">
+                </ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="LANGUAGE"
+                    android:layout_marginTop="5dp"
+                    android:textStyle="bold"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"
+                    android:layout_marginHorizontal="10dp">
+                </View>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:inputType="text"
+                    android:minHeight="48dp"
+                    android:textSize="17dp"
+                    android:hint="Search here"
+                    android:textColor="@color/grey" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </GridLayout>
+    </LinearLayout>
 </FrameLayout>

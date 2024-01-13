@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/profile_bkg"
+    android:background="@drawable/profile_bkg1"
     tools:context=".Profile">
 
     <ScrollView
@@ -64,13 +64,13 @@
                         android:layout_height="50dp"
                         android:layout_marginLeft="15dp"
                         android:layout_marginTop="15dp"
-                        android:layout_marginRight="20dp"
+                        android:layout_marginRight="15dp"
                         android:background="@drawable/edittext_bkg"
                         android:drawableLeft="@drawable/baseline_person_outline_24"
                         android:drawablePadding="15dp"
-                        android:hint="UserName"
-                        android:padding="15dp"
-                        android:inputType="textPersonName "
+                        android:hint="Name"
+                        android:paddingLeft="15dp"
+                        android:inputType="textPersonName"
                         android:textColor="@color/black"
                         android:textColorHint="@color/purple" />
 
@@ -84,7 +84,7 @@
                         android:background="@drawable/edittext_bkg"
                         android:drawableLeft="@drawable/baseline_call_24"
                         android:drawablePadding="15dp"
-                        android:hint="PhoneNumber"
+                        android:hint="Phone"
                         android:paddingLeft="15dp"
                         android:inputType="phone"
                         android:textColor="@color/black"
@@ -186,9 +186,9 @@
                         android:background="@drawable/edittext_bkg"
                         android:drawableLeft="@drawable/baseline_contact_mail_24"
                         android:drawablePadding="15dp"
-                        android:hint="PostalAddress"
+                        android:hint="Zip Code"
                         android:paddingLeft="15dp"
-                        android:inputType="textPostalAddress"
+                        android:inputType="phone"
                         android:textColor="@color/black"
                         android:textColorHint="@color/purple" />
 
@@ -211,10 +211,10 @@
                         android:textColorHint="@color/purple" />
 
                     <EditText
-                        android:id="@+id/dob"
+                        android:id="@+id/dobEditText"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
-                        android:layout_alignBottom="@+id/lang"
+                        android:layout_below="@+id/lang"
                         android:layout_centerHorizontal="true"
                         android:layout_marginLeft="15dp"
                         android:layout_marginTop="15dp"
@@ -227,6 +227,8 @@
                         android:inputType="date"
                         android:textColor="@color/black"
                         android:textColorHint="@color/purple" />
+
+
 
                     <EditText
                         android:id="@+id/occupation"

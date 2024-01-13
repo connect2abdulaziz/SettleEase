@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         servicesButton.setOnClickListener {
-            startActivity(Intent(this, ServicesActivity::class.java))
+            //
         }
     }
 }
